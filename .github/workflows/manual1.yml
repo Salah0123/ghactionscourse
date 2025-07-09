@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
     inputs:
-      environments:
+      environment:
         description: "Choose environment"
         required: true
         default: "staging"
@@ -15,4 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy application
-        run: echo "Deploying the applications"
+        run: echo "Deploying the applications to ${{inputs.environment}}"
